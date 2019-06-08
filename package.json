@@ -1,0 +1,33 @@
+{
+  "name": "react-native-arrival",
+  "version": "1.0.0",
+  "description": "Animation when component mount",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir ./ && cp src/index.js sample/arrival.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxitten/react-native-arrival.git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "keywords": [
+    "react-native",
+    "animation",
+    "spring",
+    "timing",
+    "easing"
+  ],
+  "author": "Behnam Mohammadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uxitten/react-native-arrival/issues"
+  },
+  "homepage": "https://github.com/uxitten/react-native-arrival#readme"
+}
