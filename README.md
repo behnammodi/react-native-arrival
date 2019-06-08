@@ -1,6 +1,8 @@
-# react-native-arrival
+# Animation when component mount
 
-Animation when component mount
+react-native-arrival
+
+[![NPM](https://nodei.co/npm/react-native-arrival.png)](https://nodei.co/npm/react-native-arrival/)
 
 ## Install
 
@@ -9,14 +11,14 @@ Animation when component mount
 ## Use
 
 ```jsx
-import React, { Component } from "react";
-import { Text, View } from "react-native";
-import Arrival from "react-native-arrival";
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+import Arrival from 'react-native-arrival';
 
 class ScreenA extends Component {
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: "red" }}>
+      <View style={{ flex: 1 }}>
         <Text>Screen A</Text>
       </View>
     );
@@ -59,7 +61,7 @@ const ScreenA_ = Arrival(
   },
   {
     toValue: 1,
-    delay: undefined,
+    delay: 0,
     useNativeDriver: true,
     style: { flex: 1 }
   }
@@ -71,7 +73,7 @@ const ScreenA_ = Arrival(
 You can change Arrival 'extends' from `Component` to `PureComponent` or other React Class
 
 ```jsx
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 
 const ScreenA_ = Arrival(
   ScreenA,
@@ -89,14 +91,14 @@ You can change Animated method from `spring` to `timing` and add method config
 https://facebook.github.io/react-native/docs/animated#timing
 
 ```jsx
-import { Easing } from "react-native";
+import { Easing } from 'react-native';
 const ScreenA_ = Arrival(
   ScreenA,
   {
     scale: { from: 0, to: 1 }
   },
   {
-    method: "timing",
+    method: 'timing',
     timing: {
       easing: Easing.linear,
       duration: 5000 // 5sec
@@ -110,7 +112,7 @@ Or change `spring` config
 https://facebook.github.io/react-native/docs/animated#spring
 
 ```jsx
-import { Easing } from "react-native";
+import { Easing } from 'react-native';
 const ScreenA_ = Arrival(
   ScreenA,
   {
