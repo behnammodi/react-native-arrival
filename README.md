@@ -36,16 +36,16 @@ export default Arrival(ScreenA, {
 You can use all tranform property:
 
 ```
-perspective: number
-rotate: string
-rotateX: string
-rotateY: string
-rotateZ: string
-scale: number
-scaleX: number
-scaleY: number
-translateX: number
-translateY: number
+p or perspective: number
+r or rotate: string
+rx or rotateX: string
+ry or rotateY: string
+rz or rotateZ: string
+s or scale: number
+sx or scaleX: number
+sy or scaleY: number
+x or translateX: number
+y or translateY: number
 skewX: string
 skewY: string
 ```

@@ -46,11 +46,26 @@ var defaultOptions = {
   timing: {},
   spring: {}
 };
+var abbreviations = {
+  p: 'perspective',
+  r: 'rotate',
+  rx: 'rotateX',
+  ry: 'rotateY',
+  rz: 'rotateZ',
+  s: 'scale',
+  sx: 'scaleX',
+  sy: 'scaleY',
+  x: 'translateX',
+  y: 'translateY'
+};
 
 var _default = function _default(Com, transform, options) {
   var _temp;
 
   options = _objectSpread({}, defaultOptions, options);
+  transform = Object.keys(transform).reduce(function (a, b) {
+    return _objectSpread({}, a, _defineProperty({}, abbreviations[b] || b, transform[b]));
+  }, {});
   return _temp = function (_options$extends) {
     _inherits(_temp, _options$extends);
 

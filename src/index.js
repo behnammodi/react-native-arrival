@@ -18,8 +18,29 @@ const defaultOptions = {
   }
 };
 
+const abbreviations = {
+  p: 'perspective',
+  r: 'rotate',
+  rx: 'rotateX',
+  ry: 'rotateY',
+  rz: 'rotateZ',
+  s: 'scale',
+  sx: 'scaleX',
+  sy: 'scaleY',
+  x: 'translateX',
+  y: 'translateY'
+};
+
 export default (Com, transform, options) => {
   options = { ...defaultOptions, ...options };
+
+  transform = Object.keys(transform).reduce(
+    (a, b) => ({
+      ...a,
+      [abbreviations[b] || b]: transform[b]
+    }),
+    {}
+  );
 
   return class extends options.extends {
     isMount = new Animated.Value(0);
