@@ -4,13 +4,7 @@ react-native-arrival
 
 [![NPM](https://nodei.co/npm/react-native-arrival.png)](https://nodei.co/npm/react-native-arrival/)
 
-<!-- blank line -->
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true">
-    <source src="http://itten.ir/file/react-native-arrival.mp4" type="video/mp4">
-  </video>
-</figure>
-<!-- blank line -->
+![](http://itten.ir/file/react-native-arrival.mp4)
 
 ## Install
 
