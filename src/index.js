@@ -7,8 +7,7 @@ const defaultOptions = {
   method: 'spring',
   toValue: 1,
   delay: undef,
-  useNativeDriver: true,
-  style: { flex: 1 },
+  useNativeDriver: true,  
   extends: React.Component,
   timing: {
     // Options: https://facebook.github.io/react-native/docs/animated#timing
@@ -31,7 +30,7 @@ const abbreviations = {
   y: 'translateY'
 };
 
-export default (Com, transform, options) => {
+export default (Component, transform, options) => {
   options = { ...defaultOptions, ...options };
 
   transform = Object.keys(transform).reduce(
@@ -41,6 +40,8 @@ export default (Com, transform, options) => {
     }),
     {}
   );
+
+  const AnimatedComponent = Animated.createAnimatedComponent(Component);
 
   return class extends options.extends {
     isMount = new Animated.Value(0);
@@ -55,9 +56,9 @@ export default (Com, transform, options) => {
 
     render() {
       return (
-        <Animated.View
-          style={[
-            options.style,
+        <AnimatedComponent
+          {...this.props}
+          style={[            
             {
               transform: Object.keys(transform).map(key => ({
                 [key]: this.isMount.interpolate({
@@ -67,9 +68,7 @@ export default (Com, transform, options) => {
               }))
             }
           ]}
-        >
-          <Com {...this.props} />
-        </Animated.View>
+        />
       );
     }
   };

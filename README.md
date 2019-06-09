@@ -66,8 +66,7 @@ const ScreenA_ = Arrival(
   {
     toValue: 1,
     delay: 0,
-    useNativeDriver: true,
-    style: { flex: 1 }
+    useNativeDriver: true,    
   }
 );
 ```

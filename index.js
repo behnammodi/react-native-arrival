@@ -13,6 +13,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -39,9 +41,6 @@ var defaultOptions = {
   toValue: 1,
   delay: undef,
   useNativeDriver: true,
-  style: {
-    flex: 1
-  },
   "extends": _react["default"].Component,
   timing: {},
   spring: {}
@@ -59,13 +58,16 @@ var abbreviations = {
   y: 'translateY'
 };
 
-var _default = function _default(Com, transform, options) {
+var _default = function _default(Component, transform, options) {
   var _temp;
 
   options = _objectSpread({}, defaultOptions, options);
   transform = Object.keys(transform).reduce(function (a, b) {
     return _objectSpread({}, a, _defineProperty({}, abbreviations[b] || b, transform[b]));
   }, {});
+
+  var AnimatedComponent = _reactNative.Animated.createAnimatedComponent(Component);
+
   return _temp = function (_options$extends) {
     _inherits(_temp, _options$extends);
 
@@ -99,8 +101,8 @@ var _default = function _default(Com, transform, options) {
       value: function render() {
         var _this2 = this;
 
-        return _react["default"].createElement(_reactNative.Animated.View, {
-          style: [options.style, {
+        return _react["default"].createElement(AnimatedComponent, _extends({}, this.props, {
+          style: [{
             transform: Object.keys(transform).map(function (key) {
               return _defineProperty({}, key, _this2.isMount.interpolate({
                 inputRange: [0, 1],
@@ -108,7 +110,7 @@ var _default = function _default(Com, transform, options) {
               }));
             })
           }]
-        }, _react["default"].createElement(Com, this.props));
+        }));
       }
     }]);
 
