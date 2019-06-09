@@ -4,7 +4,7 @@ react-native-arrival
 
 [![NPM](https://nodei.co/npm/react-native-arrival.png)](https://nodei.co/npm/react-native-arrival/)
 
-[![Without react-native-arrival vs with react-native-arrival](http://img.youtube.com/vi/KQsZowUbWCM/0.jpg)](http://www.youtube.com/watch?v=KQsZowUbWCM "Without react-native-arrival vs with react-native-arrival")
+![react-native-arrival](http://itten.ir/file/react-native-arrival.gif)
 
 ## Install
 
