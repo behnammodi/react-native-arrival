@@ -4,6 +4,8 @@ react-native-arrival
 
 [![NPM](https://nodei.co/npm/react-native-arrival.png)](https://nodei.co/npm/react-native-arrival/)
 
+[![Left without arrival vs with arrival]](http://itten.ir/file/react-native-arrival.mp4)
+
 ## Install
 
 `npm i react-native-arrival`
