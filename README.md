@@ -1,4 +1,4 @@
-# Animation when component mount
+# Animation when Component is mount
 
 react-native-arrival
 
@@ -31,7 +31,8 @@ class ScreenA extends Component {
 
 export default Arrival(ScreenA, {
   translateX: { from: 500, to: 0 },
-  translateY: { from: 100, to: 0 }
+  translateY: { from: 100, to: 0 },
+  opacity: { from: 0, to: 1 }
 });
 ```
 
@@ -52,6 +53,7 @@ x or translateX: number
 y or translateY: number
 skewX: string
 skewY: string
+opacity: number
 ```
 
 ## Options
@@ -66,7 +68,7 @@ const ScreenA_ = Arrival(
   {
     toValue: 1,
     delay: 0,
-    useNativeDriver: true,    
+    useNativeDriver: true
   }
 );
 ```

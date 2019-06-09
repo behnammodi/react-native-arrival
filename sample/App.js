@@ -49,13 +49,15 @@ class ScreenB extends Component {
 const ScreenA_ = Arrival(ScreenA, {
   translateX: { from: width, to: 0 },
   translateY: { from: 100, to: 0 },
-  scale: { from: 0, to: 1 }
+  scale: { from: 0, to: 1 },
+  opacity: { from: 0, to: 1 }
 });
 
 const ScreenB_ = Arrival(ScreenB, {
   x: { from: -width, to: 0 },
   y: { from: 100, to: 0 },
-  s: { from: 0, to: 1 }
+  s: { from: 0, to: 1 },
+  opacity: { from: 0, to: 1 }
 });
 
 export default class App extends Component {

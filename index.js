@@ -62,6 +62,8 @@ var _default = function _default(Component, transform, options) {
   var _temp;
 
   options = _objectSpread({}, defaultOptions, options);
+  var opacity = transform.opacity;
+  delete transform.opacity;
   transform = Object.keys(transform).reduce(function (a, b) {
     return _objectSpread({}, a, _defineProperty({}, abbreviations[b] || b, transform[b]));
   }, {});
@@ -102,14 +104,19 @@ var _default = function _default(Component, transform, options) {
         var _this2 = this;
 
         return _react["default"].createElement(AnimatedComponent, _extends({}, this.props, {
-          style: [{
+          style: _objectSpread({}, opacity && {
+            opacity: this.isMount.interpolate({
+              inputRange: [0, 1],
+              outputRange: [opacity.from, opacity.to]
+            })
+          }, {
             transform: Object.keys(transform).map(function (key) {
               return _defineProperty({}, key, _this2.isMount.interpolate({
                 inputRange: [0, 1],
                 outputRange: [transform[key].from, transform[key].to]
               }));
             })
-          }]
+          })
         }));
       }
     }]);

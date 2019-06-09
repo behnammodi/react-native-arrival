@@ -7,7 +7,7 @@ const defaultOptions = {
   method: 'spring',
   toValue: 1,
   delay: undef,
-  useNativeDriver: true,  
+  useNativeDriver: true,
   extends: React.Component,
   timing: {
     // Options: https://facebook.github.io/react-native/docs/animated#timing
@@ -32,6 +32,9 @@ const abbreviations = {
 
 export default (Component, transform, options) => {
   options = { ...defaultOptions, ...options };
+
+  const opacity = transform.opacity;
+  delete transform.opacity;
 
   transform = Object.keys(transform).reduce(
     (a, b) => ({
@@ -58,16 +61,20 @@ export default (Component, transform, options) => {
       return (
         <AnimatedComponent
           {...this.props}
-          style={[            
-            {
-              transform: Object.keys(transform).map(key => ({
-                [key]: this.isMount.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [transform[key].from, transform[key].to]
-                })
-              }))
-            }
-          ]}
+          style={{
+            ...(opacity && {
+              opacity: this.isMount.interpolate({
+                inputRange: [0, 1],
+                outputRange: [opacity.from, opacity.to]
+              })
+            }),
+            transform: Object.keys(transform).map(key => ({
+              [key]: this.isMount.interpolate({
+                inputRange: [0, 1],
+                outputRange: [transform[key].from, transform[key].to]
+              })
+            }))
+          }}
         />
       );
     }
