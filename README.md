@@ -6,6 +6,8 @@ react-native-arrival
 
 ![react-native-arrival](http://itten.ir/file/react-native-arrival.gif)
 
+Left without react-native-arrival and right with react-native-arrival
+
 ## Install
 
 `npm i react-native-arrival`
