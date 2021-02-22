@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uxitten/react-native-arrival.git"
+    "url": "git+https://github.com/behnammodi/react-native-arrival.git"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -27,7 +27,7 @@
   "author": "Behnam Mohammadi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/uxitten/react-native-arrival/issues"
+    "url": "https://github.com/behnammodi/react-native-arrival/issues"
   },
-  "homepage": "https://github.com/uxitten/react-native-arrival#readme"
+  "homepage": "https://github.com/behnammodi/react-native-arrival#readme"
 }
